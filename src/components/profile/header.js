@@ -1,9 +1,11 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
 import Skeleton from 'react-loading-skeleton';
 import useUser from '../../hooks/use-user';
 import { isUserFollowingProfile, toggleFollow } from '../../services/firebase';
+import UserContext from '../../context/user';
+import { DEFAULT_IMAGE_PATH } from '../../constants/paths';
 
 export default function Header({
   photosCount,
@@ -13,14 +15,15 @@ export default function Header({
     docId: profileDocId,
     userId: profileUserId,
     fullName,
-    followers = [],
-    following = [],
+    followers,
+    following,
     username: profileUsername
   }
 }) {
-  const { user } = useUser();
-  const [isFollowingProfile, setIsFollowingProfile] = useState(false);
-  const activeBtnFollow = user.username && user.username !== profileUsername;
+  const { user: loggedInUser } = useContext(UserContext);
+  const { user } = useUser(loggedInUser?.uid);
+  const [isFollowingProfile, setIsFollowingProfile] = useState(null);
+  const activeBtnFollow = user?.username && user?.username !== profileUsername;
 
   const handleToggleFollow = async () => {
     setIsFollowingProfile((isFollowingProfile) => !isFollowingProfile);
@@ -38,39 +41,48 @@ export default function Header({
     if (user?.username && profileUserId) {
       isLoggedInUserFollowingProfile();
     }
-  }, [user.username, profileUserId]);
+  }, [user?.username, profileUserId]);
 
   return (
     <div className="grid grid-cols-3 gap-4 justify-between mx-auto max-w-screen-lg">
-      <div className="container flex justify-center">
-        {user.username && (
+      <div className="container flex justify-center items-center">
+        {profileUsername ? (
           <img
             className="rounded-full h-40 w-40 flex"
-            alt={`${user.username} profile picture`}
+            alt={`${fullName} profile picture`}
             src={`/images/avatars/${profileUsername}.jpg`}
+            onError={(e) => {
+              e.target.src = DEFAULT_IMAGE_PATH;
+            }}
           />
+        ) : (
+          <Skeleton circle height={150} width={150} count={2} />
         )}
       </div>
       <div className="flex items-center justify-center flex-col col-span-2">
         <div className="container flex items-center">
           <p className="text-2xl mr-4">{profileUsername}</p>
-          {activeBtnFollow && (
-            <button
-              className="bg-blue-medium font-bold text-sm rounded text-white w-20 h-8"
-              type="button"
-              onClick={handleToggleFollow}
-              onKeyDown={(event) => {
-                if (event.key === 'Enter') {
-                  handleToggleFollow();
-                }
-              }}
-            >
-              {isFollowingProfile ? 'Unfollow' : 'Follow'}
-            </button>
+          {activeBtnFollow && isFollowingProfile === null ? (
+            <Skeleton count={1} width={80} height={32} />
+          ) : (
+            activeBtnFollow && (
+              <button
+                className="bg-blue-medium font-bold text-sm rounded text-white w-20 h-8"
+                type="button"
+                onClick={handleToggleFollow}
+                onKeyDown={(event) => {
+                  if (event.key === 'Enter') {
+                    handleToggleFollow();
+                  }
+                }}
+              >
+                {isFollowingProfile ? 'Unfollow' : 'Follow'}
+              </button>
+            )
           )}
         </div>
         <div className="container flex mt-4">
-          {followers === undefined || following === undefined ? (
+          {!followers || !following ? (
             <Skeleton count={1} width={677} height={24} />
           ) : (
             <>
@@ -83,7 +95,7 @@ export default function Header({
                 {followerCount === 1 ? ` follower` : ` followers`}
               </p>
               <p className="mr-10">
-                <span className="font-bold">{following.length}</span>
+                <span className="font-bold">{following?.length}</span>
                 {` following`}
               </p>
             </>

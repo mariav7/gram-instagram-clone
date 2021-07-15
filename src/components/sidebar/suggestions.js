@@ -19,7 +19,7 @@ export default function Suggestions({ userId, following, loggedInUserDocId }) {
     }
 
     // console.log('profiles', profiles);
-  }, [userId, following]);
+  }, [userId]);
 
   return !profiles ? (
     <Skeleton count={10} height={150} className="mt-5" />
