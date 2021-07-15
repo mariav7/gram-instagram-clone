@@ -6,7 +6,7 @@ import 'firebase/auth';
 // import { seedDatabase } from '../seed';
 
 const config = {
-  /* YOUR FIREBASE CONFIG */
+  /*YOUR FIREBASE CONFIG */
 };
 
 const firebase = Firebase.initializeApp(config);
