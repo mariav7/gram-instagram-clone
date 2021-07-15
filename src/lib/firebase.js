@@ -6,12 +6,7 @@ import 'firebase/auth';
 // import { seedDatabase } from '../seed';
 
 const config = {
-  apiKey: 'AIzaSyBbDJV7xpUR3zSCLfT1iRc_B772mNPVku0',
-  authDomain: 'instagram-tu.firebaseapp.com',
-  projectId: 'instagram-tu',
-  storageBucket: 'instagram-tu.appspot.com',
-  messagingSenderId: '555378168651',
-  appId: '1:555378168651:web:eb32767b146b9aff200ece'
+  /* YOUR FIREBASE CONFIG */
 };
 
 const firebase = Firebase.initializeApp(config);

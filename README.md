@@ -1,6 +1,6 @@
-## Instagram clone using React, Tailwind CSS, Firebase 
+## Gram an Instagram clone using React, Tailwind CSS, Firebase 
 
-## 🚧 Work in progress 
+## ✨ 👉Coded for recreational purposes
 
 This app was built using Create React App, Firebase & Tailwind CSS. 
 Pages: login, sign up, dashboard & user profile page. 
