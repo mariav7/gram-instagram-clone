@@ -8,13 +8,7 @@ import {
 } from '../../services/firebase';
 import LoggedInUserContext from '../../context/logged-in-user';
 
-export default function SuggestedProfile({
-  profileDocId,
-  username,
-  profileId,
-  userId,
-  loggedInUserDocId
-}) {
+const SuggestedProfile = ({ profileDocId, username, profileId, userId, loggedInUserDocId }) => {
   const [followed, setFollowed] = useState(false);
   const { setActiveUser } = useContext(LoggedInUserContext);
 
@@ -53,7 +47,7 @@ export default function SuggestedProfile({
       </button>
     </div>
   ) : null;
-}
+};
 
 SuggestedProfile.propTypes = {
   profileDocId: PropTypes.string.isRequired,
@@ -62,3 +56,5 @@ SuggestedProfile.propTypes = {
   userId: PropTypes.string.isRequired,
   loggedInUserDocId: PropTypes.string.isRequired
 };
+
+export default SuggestedProfile;

@@ -4,7 +4,7 @@ import Header from './header';
 import Photos from './photos';
 import { getUserPhotosByUserId } from '../../services/firebase';
 
-export default function Profile({ user }) {
+const Profile = ({ user }) => {
   const reducer = (state, newState) => ({ ...state, ...newState });
   const initialState = {
     profile: {},
@@ -36,7 +36,7 @@ export default function Profile({ user }) {
       <Photos photos={photosCollection} />
     </>
   );
-}
+};
 
 Profile.propTypes = {
   user: PropTypes.shape({
@@ -49,3 +49,5 @@ Profile.propTypes = {
     username: PropTypes.string
   })
 };
+
+export default Profile;

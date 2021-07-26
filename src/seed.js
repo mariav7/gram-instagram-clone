@@ -6,7 +6,7 @@ export function seedDatabase(firebase) {
       userId: 'NMYdIi7u9CagqX57Bsr7LHrZGbf2',
       username: 'karl',
       fullName: 'Karl Hadwen',
-      emailAddress: 'karlhadwen@gmail.com',
+      emailAddress: 'karl@gmail.com',
       following: ['2'],
       followers: ['2', '3', '4'],
       dateCreated: Date.now()

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import FirebaseContext from '../../context/firebase';
 import UserContext from '../../context/user';
 
-export default function Actions({ docId, totalLikes, likedPhoto, handleFocus }) {
+const Actions = ({ docId, totalLikes, likedPhoto, handleFocus }) => {
   const {
     user: { uid: userId }
   } = useContext(UserContext);
@@ -80,7 +80,7 @@ export default function Actions({ docId, totalLikes, likedPhoto, handleFocus }) 
       </div>
     </>
   );
-}
+};
 
 Actions.propTypes = {
   docId: PropTypes.string.isRequired,
@@ -88,3 +88,5 @@ Actions.propTypes = {
   likedPhoto: PropTypes.bool.isRequired,
   handleFocus: PropTypes.func.isRequired
 };
+
+export default Actions;

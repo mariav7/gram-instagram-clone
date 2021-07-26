@@ -3,7 +3,7 @@ import { useHistory, Link } from 'react-router-dom';
 import FirebaseContext from '../context/firebase';
 import * as ROUTES from '../constants/routes';
 
-export default function Login() {
+const Login = () => {
   const history = useHistory();
   const { firebase } = useContext(FirebaseContext);
 
@@ -22,7 +22,20 @@ export default function Login() {
     } catch (error) {
       setEmailAddress('');
       setPassword('');
-      setError(error.message);
+      switch (error.code) {
+        case 'auth/user-not-found':
+          setError('This Gram account does not exist');
+          break;
+        case 'auth/wrong-password':
+          setError('The email address or password is incorrect');
+          break;
+        case 'auth/invalid-email':
+          setError('Enter a valid email address');
+          break;
+        default:
+          setError(error.message);
+          break;
+      }
     }
   };
 
@@ -69,6 +82,13 @@ export default function Login() {
               Login
             </button>
           </form>
+          <div className="w-full pt-4">
+            <p className="text-xs">
+              <Link to={ROUTES.RESET_PASSWORD} className="font-bold text-blue-medium">
+                Forgot password?
+              </Link>
+            </p>
+          </div>
         </div>
         <div className="flex justify-center items-center flex-col w-full bg-white p-4 rounded border border-gray-primary">
           <p className="text-sm">
@@ -81,4 +101,6 @@ export default function Login() {
       </div>
     </div>
   );
-}
+};
+
+export default Login;

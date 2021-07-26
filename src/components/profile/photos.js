@@ -2,10 +2,11 @@
 import PropTypes from 'prop-types';
 import Skeleton from 'react-loading-skeleton';
 
-export default function Photos({ photos }) {
+const Photos = (props) => {
+  const { photos } = props;
   return (
     <div className="h-16 border-t border-gray-primary mt-12 pt-4">
-      <div className="grid grid-cols-3 gap-8 mt-4 mb-12">
+      <div className="grid grid-cols-3 gap-4 mt-4 mb-12">
         {!photos
           ? new Array(12).fill(0).map((_, i) => <Skeleton key={i} width={320} height={400} />)
           : photos.length > 0
@@ -51,8 +52,10 @@ export default function Photos({ photos }) {
       {!photos || (photos.length === 0 && <p className="text-center text-2xl">No Posts Yet ☹️</p>)}
     </div>
   );
-}
+};
 
 Photos.propTypes = {
   photos: PropTypes.array
 };
+
+export default Photos;

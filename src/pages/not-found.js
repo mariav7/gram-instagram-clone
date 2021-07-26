@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import Header from '../components/header';
+import { Header } from '../components';
 
-export default function NotFound() {
+const NotFound = () => {
   useEffect(() => {
     document.title = 'Not Found - Oops';
   }, []);
@@ -13,4 +13,6 @@ export default function NotFound() {
       </div>
     </div>
   );
-}
+};
+
+export default NotFound;

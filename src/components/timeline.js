@@ -5,7 +5,7 @@ import LoggedInUserContext from '../context/logged-in-user';
 import usePhotos from '../hooks/use-photos';
 import Post from './post';
 
-export default function Time() {
+const Timeline = () => {
   const { user } = useContext(LoggedInUserContext);
   // get the logged in user's photos (hook)
   const { photos } = usePhotos(user);
@@ -20,4 +20,6 @@ export default function Time() {
       )}
     </div>
   );
-}
+};
+
+export default Timeline;

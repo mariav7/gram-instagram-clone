@@ -4,7 +4,7 @@ import { formatDistance } from 'date-fns';
 import { Link } from 'react-router-dom';
 import AddComment from './add-comment';
 
-export default function Comments({ docId, comments: allComments, posted, commentInput }) {
+const Comments = ({ docId, comments: allComments, posted, commentInput }) => {
   const [comments, setComments] = useState(allComments);
   const [commentsSlice, setCommentsSlice] = useState(3);
 
@@ -49,7 +49,7 @@ export default function Comments({ docId, comments: allComments, posted, comment
       />
     </>
   );
-}
+};
 
 Comments.propTypes = {
   docId: PropTypes.string.isRequired,
@@ -57,3 +57,5 @@ Comments.propTypes = {
   posted: PropTypes.number.isRequired,
   commentInput: PropTypes.object.isRequired
 };
+
+export default Comments;

@@ -6,7 +6,7 @@ import Actions from './actions';
 import Footer from './footer';
 import Comments from './comments';
 
-export default function Post({ content }) {
+const Post = ({ content }) => {
   const commentInput = useRef(null);
   const handleFocus = () => commentInput.current.focus();
   // console.log('content', content);
@@ -29,7 +29,7 @@ export default function Post({ content }) {
       />
     </div>
   );
-}
+};
 
 Post.propTypes = {
   content: PropTypes.shape({
@@ -43,3 +43,5 @@ Post.propTypes = {
     dateCreated: PropTypes.number.isRequired
   })
 };
+
+export default Post;

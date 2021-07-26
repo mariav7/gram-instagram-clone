@@ -8,12 +8,13 @@ import ReactLoader from './components/loader';
 import ProtectedRoute from './helpers/protected-routes';
 
 const Login = lazy(() => import('./pages/login'));
+const ResetPassword = lazy(() => import('./pages/reset-pwd'));
 const SignUp = lazy(() => import('./pages/sign-up'));
 const Dashboard = lazy(() => import('./pages/dashboard'));
 const Profile = lazy(() => import('./pages/profile'));
 const NotFound = lazy(() => import('./pages/not-found'));
 
-function App() {
+const App = () => {
   const { user } = useAuthListener();
   return (
     <UserContext.Provider value={{ user }}>
@@ -21,6 +22,7 @@ function App() {
         <Suspense fallback={<ReactLoader />}>
           <Switch>
             <Route path={ROUTES.LOGIN} component={Login} />
+            <Route path={ROUTES.RESET_PASSWORD} component={ResetPassword} />
             <Route path={ROUTES.SIGN_UP} component={SignUp} />
             <Route path={ROUTES.PROFILE} component={Profile} />
             <ProtectedRoute user={user} path={ROUTES.DASHBOARD} exact>
@@ -32,6 +34,6 @@ function App() {
       </Router>
     </UserContext.Provider>
   );
-}
+};
 
 export default App;

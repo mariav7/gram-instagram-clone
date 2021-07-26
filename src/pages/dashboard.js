@@ -1,12 +1,10 @@
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import Header from '../components/header';
-import Sidebar from '../components/sidebar';
-import Timeline from '../components/timeline';
+import { Header, Timeline, Sidebar } from '../components';
 import useUser from '../hooks/use-user';
 import LoggedInUserContext from '../context/logged-in-user';
 
-export default function Dashboard({ user: loggedInUser }) {
+const Dashboard = ({ user: loggedInUser }) => {
   const { user, setActiveUser } = useUser(loggedInUser.uid);
   useEffect(() => {
     document.title = 'Gram';
@@ -23,8 +21,10 @@ export default function Dashboard({ user: loggedInUser }) {
       </div>
     </LoggedInUserContext.Provider>
   );
-}
+};
 
 Dashboard.propTypes = {
   user: PropTypes.object.isRequired
 };
+
+export default Dashboard;

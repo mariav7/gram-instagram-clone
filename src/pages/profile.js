@@ -2,10 +2,9 @@ import { useState, useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { getUserByUsername } from '../services/firebase';
 import * as ROUTES from '../constants/routes';
-import Header from '../components/header';
-import UserProfile from '../components/profile';
+import { Header, Profile as UserProfile } from '../components';
 
-export default function Profile() {
+const Profile = () => {
   const { username } = useParams();
   const [user, setUser] = useState(null);
   const history = useHistory();
@@ -32,4 +31,6 @@ export default function Profile() {
       </div>
     </div>
   ) : null;
-}
+};
+
+export default Profile;

@@ -6,7 +6,7 @@ import * as ROUTES from '../constants/routes';
 import { DEFAULT_IMAGE_PATH } from '../constants/paths';
 import useUser from '../hooks/use-user';
 
-export default function Header() {
+const Header = () => {
   const { user: loggedInUser } = useContext(UserContext);
   const { user } = useUser(loggedInUser?.uid);
   const { firebase } = useContext(FirebaseContext);
@@ -113,4 +113,6 @@ export default function Header() {
       </div>
     </header>
   );
-}
+};
+
+export default Header;

@@ -7,7 +7,7 @@ import { isUserFollowingProfile, toggleFollow } from '../../services/firebase';
 import UserContext from '../../context/user';
 import { DEFAULT_IMAGE_PATH } from '../../constants/paths';
 
-export default function Header({
+const Header = ({
   photosCount,
   followerCount,
   setFollowerCount,
@@ -19,7 +19,7 @@ export default function Header({
     following,
     username: profileUsername
   }
-}) {
+}) => {
   const { user: loggedInUser } = useContext(UserContext);
   const { user } = useUser(loggedInUser?.uid);
   const [isFollowingProfile, setIsFollowingProfile] = useState(null);
@@ -107,7 +107,7 @@ export default function Header({
       </div>
     </div>
   );
-}
+};
 
 Header.propTypes = {
   photosCount: PropTypes.number.isRequired,
@@ -122,3 +122,5 @@ Header.propTypes = {
     following: PropTypes.array
   }).isRequired
 };
+
+export default Header;

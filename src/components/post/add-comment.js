@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import FirebaseContext from '../../context/firebase';
 import UserContext from '../../context/user';
 
-export default function AddComment({ docId, comments, setComments, commentInput }) {
+const AddComment = ({ docId, comments, setComments, commentInput }) => {
   const [comment, setComment] = useState('');
   const { firebase, FieldValue } = useContext(FirebaseContext);
   const {
@@ -55,7 +55,7 @@ export default function AddComment({ docId, comments, setComments, commentInput 
       </form>
     </div>
   );
-}
+};
 
 AddComment.propTypes = {
   docId: PropTypes.string.isRequired,
@@ -63,3 +63,5 @@ AddComment.propTypes = {
   setComments: PropTypes.func.isRequired,
   commentInput: PropTypes.object
 };
+
+export default AddComment;

@@ -8,7 +8,8 @@ module.exports = {
   },
   theme: {
     fill: (theme) => ({
-        red: theme('colors.red.primary')
+      red: theme('colors.red.primary'),
+      green: theme('colors.green.primary')
     }),
     colors: {
       white: '#ffffff',
@@ -26,6 +27,9 @@ module.exports = {
       },
       red: {
         primary: '#ed4956',
+      },
+      green: {
+        primary: '#10b981'
       }
     }
   },
