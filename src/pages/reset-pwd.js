@@ -51,14 +51,13 @@ const ResetPassword = () => {
   return (
     <article className="flex items-center justify-center h-screen bg-gray-background">
       <section className="bg-white rounded-sm border border-gray-primary max-w-sm text-center flex flex-col items-center justify-center w-96">
-        <figure className="mt-5 mb-4">
-          <div className="w-24 h-24">
+        <div className="flex justify-center items-center flex-col w-full bg-white p-4">
+          <figure className="mt-5 mb-4">
             {validForm ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="104.000000pt"
                 height="97.000000pt"
-                className="h-6 w-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="#10b981"
@@ -89,12 +88,8 @@ const ResetPassword = () => {
                 </g>
               </svg>
             )}
-          </div>
-        </figure>
-
-        {!submitting && <h3 className="font-bold">Forgot your password ?</h3>}
-
-        <div className="flex justify-center items-center flex-col w-full bg-white p-4">
+          </figure>
+          {!submitting && <h3 className="font-bold mt-5 mb-4">Forgot your password ?</h3>}
           <p className="text-md text-gray-base">
             {!validForm
               ? "Enter your email address and we'll send you a link to get back into your account."
@@ -125,7 +120,9 @@ const ResetPassword = () => {
             </form>
           </div>
         ) : (
-          <ReactLoader />
+          <div className="mb-5">
+            <ReactLoader />
+          </div>
         )}
 
         {!submitting && (

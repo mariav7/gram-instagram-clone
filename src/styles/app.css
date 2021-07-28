@@ -201,7 +201,8 @@ Correct the inability to style clickable types in iOS and Safari.
 */
 
 button,
-[type='button'] {
+[type='button'],
+[type='submit'] {
   -webkit-appearance: button;
 }
 
@@ -577,6 +578,10 @@ video {
   grid-column: span 4 / span 4;
 }
 
+.m-12 {
+  margin: 3rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -626,6 +631,14 @@ video {
   margin-bottom: 0.5rem;
 }
 
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
 .mb-6 {
   margin-bottom: 1.5rem;
 }
@@ -658,8 +671,16 @@ video {
   display: flex;
 }
 
+.h-2 {
+  height: 0.5rem;
+}
+
 .h-4 {
   height: 1rem;
+}
+
+.h-6 {
+  height: 1.5rem;
 }
 
 .h-8 {
@@ -678,6 +699,18 @@ video {
   height: 100%;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
+.w-4 {
+  width: 1rem;
+}
+
+.w-6 {
+  width: 1.5rem;
+}
+
 .w-8 {
   width: 2rem;
 }
@@ -694,6 +727,18 @@ video {
   width: 10rem;
 }
 
+.w-96 {
+  width: 24rem;
+}
+
+.w-2\/5 {
+  width: 40%;
+}
+
+.w-3\/5 {
+  width: 60%;
+}
+
 .w-6\/12 {
   width: 50%;
 }
@@ -702,8 +747,27 @@ video {
   width: 100%;
 }
 
+.max-w-sm {
+  max-width: 24rem;
+}
+
+.max-w-screen-md {
+  max-width: 768px;
+}
+
 .max-w-screen-lg {
   max-width: 1024px;
+}
+
+.transform {
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 @keyframes spin {
@@ -786,6 +850,10 @@ video {
   gap: 1.25rem;
 }
 
+.rounded-sm {
+  border-radius: 0.125rem;
+}
+
 .rounded {
   border-radius: 0.25rem;
 }
@@ -823,6 +891,11 @@ video {
 
 .bg-black-faded {
   background-color: #00000059;
+}
+
+.bg-gray-background {
+  --tw-bg-opacity: 1;
+  background-color: rgba(250, 250, 250, var(--tw-bg-opacity));
 }
 
 .fill-red {
@@ -904,6 +977,10 @@ video {
   font-weight: 500;
 }
 
+.font-semibold {
+  font-weight: 600;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -914,6 +991,10 @@ video {
 
 .italic {
   font-style: italic;
+}
+
+.tracking-widest {
+  letter-spacing: 0.1em;
 }
 
 .text-white {
@@ -943,6 +1024,10 @@ video {
 
 .opacity-25 {
   opacity: 0.25;
+}
+
+.opacity-50 {
+  opacity: 0.5;
 }
 
 *, ::before, ::after {
