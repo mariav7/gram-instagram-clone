@@ -1,7 +1,7 @@
 ## Gram an Instagram clone using React, Tailwind CSS, Firebase
 [Demo](https://insta-clone-pi.vercel.app)
 ##  Screen (Login)
-![minipic](./src/screenshots/login.png)
+<img src="./src/screenshots/login.png" width="250" height="100">
 
 ##  Screen (Home)
 ![App-demo](./src/screenshots/home.png)
