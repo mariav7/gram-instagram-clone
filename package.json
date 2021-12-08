@@ -1,5 +1,4 @@
 {
-  "homepage": "http://mariav7.github.io/insta-clone",
   "name": "gram",
   "version": "0.1.0",
   "private": true,
@@ -19,13 +18,11 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "build:css": "postcss src/styles/tailwind.css -o src/styles/app.css",
     "watch:css": "postcss src/styles/tailwind.css -o src/styles/app.css --watch",
     "react-scripts:start": "sleep 5 && react-scripts start",
     "start": "run-p watch:css react-scripts:start",
-    "build": "react-scripts:build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -58,7 +55,6 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "gh-pages": "^3.2.3",
     "npm-run-all": "^4.1.5",
     "postcss-cli": "^8.3.1",
     "prettier": "^2.3.2",
