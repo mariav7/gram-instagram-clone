@@ -1,10 +1,13 @@
 ## Gram an Instagram clone using React, Tailwind CSS, Firebase
+[https://insta-clone-pi.vercel.app](Demo)
+##  Screen (Login)
+![App-demo](./src/screenshots/login.png)
 
-### `npm install`
+##  Screen (Home)
+![App-demo](./src/screenshots/home.png)
 
-### `npm start`
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+##  Screen (Profile)
+![App-demo](./src/screenshots/profile.png)
 
 ## ✨ 👉Coded for recreational purposes
 
