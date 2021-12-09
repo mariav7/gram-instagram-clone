@@ -1,4 +1,4 @@
-## Gram an Instagram clone using ReactJS, Tailwind CSS, Firebase
+## Gram an Instagram clone using ReactJS, Tailwind CSS, Firebase and deployed with Vercel 
 [Demo](https://insta-clone-pi.vercel.app)
 ##  Screen (Login)
 <img src="./src/screenshots/login.png" width="500" height="300">
