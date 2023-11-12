@@ -1,3 +1,0 @@
-#### Others ####
-CHOKIDAR_USEPOLLING=true
-NODE_OPTIONS=--openssl-legacy-provider
