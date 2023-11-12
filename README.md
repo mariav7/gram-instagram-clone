@@ -1,6 +1,5 @@
 <div align="center">
 
-<!-- ![Demo:](src/misc/demo.gif) -->
 <img src="src/misc/login.png" width="100%" />
 
 ---
@@ -20,7 +19,7 @@ This project was developed for recreational purposes and serves as a hands-on ex
 ## Supported feautures
 
 * Use the following credentials to explore the app:
-  * username: `test`
+  * username: `test@yopmail.com`
   * password: `123456`
 * Account Management: create an account and request a password reset
 * Post Interaction: `like` and `deslike` a post
@@ -38,6 +37,6 @@ This project was developed for recreational purposes and serves as a hands-on ex
 
 ---
 
-## [Demo](https://insta-clone-pi.vercel.app/login)
+## [Demo](https://gram-clone-pi.vercel.app)
 
 ---
