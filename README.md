@@ -1,16 +1,16 @@
 <div align="center">
 
-<!-- ![Demo:](misc/demo.gif) -->
-<img src="src/misc/login.png" width="500" height="300">
+<!-- ![Demo:](src/misc/demo.gif) -->
+<img src="src/misc/login.png" width="100%" />
 
 ---
-Coded with 💗 by: [mflores-](https://github.com/mariav7)
+Made with 💗 by: [mflores-](https://github.com/mariav7)
 
 </div>
 
 ## Personal project - Gram an Instagram clone
 
-This app was built using [Create React App](https://create-react-app.dev/), [Firebase](https://firebase.google.com/) & [Tailwind CSS](https://tailwindcss.com/) and deployed with [Vercel](https://vercel.com/).
+This app was built using [Create React App](https://create-react-app.dev/), [Firebase](https://firebase.google.com/), [Tailwind CSS](https://tailwindcss.com/) and deployed with [Vercel](https://vercel.com/).
 
 ## ✨ NOTE: 👉Coded for Recreational Purposes
 This project was developed for recreational purposes and serves as a hands-on experience with technologies such as Tailwind CSS, Firebase, and Vercel. It marks the first-time usage of these tools, and more features are planned for future updates.
@@ -35,5 +35,9 @@ This project was developed for recreational purposes and serves as a hands-on ex
     * User profile
 * Database Handling: the app utilizes Firebase to manage the database
 * Deployment: the app is deployed using Vercel, making it accessible and performant
+
+---
+
+## [Demo](https://insta-clone-pi.vercel.app/login)
 
 ---
